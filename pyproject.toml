@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "modis-to-wps"
+version = "0.1.0"
+description = "MODIS HDF processing pipeline toward WPS geogrid static datasets"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23", "PyYAML>=6", "python-dateutil>=2.8"]
+[project.optional-dependencies]
+gdal = [] # install GDAL via conda-forge to match libgdal
+nasa = ["earthaccess>=0.9"]
+test = ["pytest>=7"]
+[project.scripts]
+modis-to-wps = "modis_to_wps.cli:main"
+[tool.setuptools.packages.find]
+include = ["modis_to_wps*"]

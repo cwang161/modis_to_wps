@@ -1,0 +1,11 @@
+# Planned workflow configuration; not yet executable end-to-end.
+year: 2019
+input_dir: ./data/hdf
+output_dir: ./output/wps_geog
+region: {west: 65, south: 0, east: 135, north: 55}
+resolution_arcsec: 30
+products:
+  landcover: {enabled: true, source: MCD12Q1, layer: LC_Type1}
+  gvf: {enabled: true, source: MCD15A2H, method: fpar}
+  lai: {enabled: true, source: MCD15A2H}
+  albedo: {enabled: true, source: MCD43A3, method: wsa_shortwave}
